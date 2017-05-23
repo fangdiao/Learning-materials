@@ -1,0 +1,108 @@
+@import url(../common.less);
+.a {
+  &:link {color:@white;background-color: rgba(0, 0, 0, .45);text-decoration: none;}
+  &:visited {color:@white;background-color: rgba(0, 0, 0, .45);text-decoration: none;}
+  &:hover {color:@dark;background-color: rgba(255, 255, 255, 1);text-decoration: none;}
+  &:active {color:@white;background-color: rgba(255, 255, 255, 1);text-decoration: none;}
+}
+.a-back {
+  &:link {color:@dark + #222222;text-decoration: none;}
+  &:visited {color:@dark + #222222;text-decoration: none;}
+  &:hover {color:@dark + #222222;text-decoration: none;}
+  &:active {color:@dark + #222222;text-decoration: none;}
+}
+
+
+header {
+  position: relative;
+  img {
+    width: 100%;
+  }
+  a {
+    display: inline-block;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    font-size: 14px;
+    padding: 4px 10px;
+    border-radius: 2px;
+    @media (max-width:768px) {
+      top: 20px;
+      left: 20px;
+      font-size: 12px;
+      padding: 3px 8px;
+    }
+    .a;
+    i {
+      font-size: 16px !important;
+    }
+  }
+  .head-m {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+    .container {
+      margin: 0 auto;
+      h1 {
+        color: @white;
+        font-size: 40px;
+        @media (max-width:768px) {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+section {
+  .container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    p {
+      font-size: 18px;
+      line-height: 30px;
+      @media(max-width:768px) {
+        font-size: 14px;
+      }
+    }
+  }
+}
+footer {
+  .container {
+    .back-index,.pre_next{
+      border-top: 1px solid @dark + #222222;
+      padding-top: 10px;
+      padding-bottom: 20px;
+    }
+    .pre_next {
+      .row {
+        div {
+          a {
+            display: block;
+            font-size: 14px;
+            color:@dark + #222222;
+            padding-top: 10px;
+            .a-back;
+          }
+        }
+        .pre {
+          i {
+            font-size: 12px !important;
+          }
+        }
+      }
+    }
+    .back-index {
+      a {
+        display: inline-block;
+        font-size: 14px;
+        .a-back;
+        i {
+          font-size: 12px !important;
+          margin-right: 2px;
+        }
+      }
+    }
+  }
+}

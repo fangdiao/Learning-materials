@@ -1,0 +1,307 @@
+/* 全局样式 */
+@fontSizeL: 14px;
+@fontSizeM: 10px;
+@fontSizeS: 8px;
+@yellow: #786154;
+@gray: #F5F5F5;
+@white: #ffffff;
+@dark: @white - #777777;
+@blue: #1F71E8;
+@borderColor: #E1E4E7;
+i {user-select:none;}
+body {min-width: 300px;}
+li {list-style-type: none;}
+.h-fontsize {
+  @media (min-width:1200px) {
+    font-size: 40px;
+  }
+  @media (max-width:1200px) {
+    font-size: 32px;
+  }
+  @media (max-width:768px) {
+    font-size: 16px;
+  }
+}
+.show {
+  margin-top: 14vh;
+  opacity: 1;
+}
+.hide {
+  margin-top: 16vh;
+  opacity: 0;
+}
+.a-fontsize {
+  @media (min-width:1200px) {
+    font-size: 16px;
+  }
+  @media (max-width:1200px) {
+    font-size: 14px;
+  }
+  @media (max-width:768px) {
+    font-size: 12px;
+  }
+}
+.error {
+  display: block;
+  color: red;
+  position: absolute;
+  right: 10px;
+  top: 14px;
+  font-size: 14px;
+}
+.white-button {
+  background-color:@white;
+  border: 1px solid @borderColor;
+  outline: none;
+  border-radius: 3px;
+}
+.button {
+  background-color: @blue + #222222;
+  color: @white;
+  border: 0;
+  outline: none;
+  border-radius: 3px;
+  .button-link;
+}
+.textarea {
+  outline: none;
+  border: 1px solid @borderColor;
+  padding: 10px;
+  border-radius: 3px;
+  transfrom: box-shadow;
+}
+.input-text {
+  height: 32px;
+  outline: none;
+  border-radius: 4px;
+  border: 1px solid @borderColor;
+  transfrom: box-shadow;
+}
+.clearfix {
+  zoom: 1;
+  &:before {
+    display: table;
+    content: " ";
+  }
+  &:after {
+    display: table;
+    content: " ";
+    clear: both;
+  }
+}
+.common-width {width: 100%;height: auto;margin:0 auto;}
+.button-link {
+  &:hover {background-color:  @blue + #111111;}
+  &:active {background-color:  @blue;}
+}
+.link {
+  &:link {color: @white;text-decoration: none;}
+  &:visited {color: @white;text-decoration: none;}
+  &:hover {color: @blue;text-decoration: none;}
+  &:active {color: @white;text-decoration: none;}
+}
+.link-sign {
+  &:link {color: @dark;text-decoration: none;}
+  &:visited {color: @dark;text-decoration: none;}
+  &:hover {color: @blue;text-decoration: none;}
+  &:active {color: @dark;text-decoration: none;}
+}
+.link-bg {
+  &:link {color: @white;text-decoration: none;}
+  &:visited {color: @white;text-decoration: none;}
+  &:hover {color: @white;text-decoration: none;background-color: rgba(0,0,0,.2);}
+  &:active {color: @white;text-decoration: none;background-color: rgba(0,0,0,.2);}
+}
+.box-shadow {
+  background-color: rgba(0,0,0,.45);
+  border-radius: 4px;
+  box-shadow: 0 5px 20px rgba(0,34,77,.1);
+}
+.box-shadow-focus {
+  border: 1px solid @borderColor - #222222;
+  box-shadow: 0 4px 10px rgba(0,0,0,.1),
+}
+.line {
+  position: relative;
+  &:before,&:after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 2px;
+    display: block;
+    background-color: @white;
+    @media (min-width:1200px) {
+      width: 80px;
+    }
+    @media (max-width:1200px) {
+      width: 80px;
+    }
+    @media (max-width:992px) {
+      width: 60px;
+    }
+    @media (max-width:768px) {
+      width: 40px;
+    }
+  }
+  &:before {
+    top: 50%;
+    right: 100%;
+    margin-right: 20px;
+  }
+  &:after {
+    top: 50%;
+    left: 100%;
+    margin-left: 20px;
+  }
+}
+.triangle {
+  position: relative;
+  display: block;
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    display: block;
+    margin: auto;
+    border-bottom: 8px solid @borderColor;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+  }
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 1px;
+    left: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    margin: auto;
+    border-bottom: 8px solid rgba(0,0,0,.45);
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+  }
+}
+
+
+/* sign_box */
+
+.sign-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  .mask {
+    @media (min-width:500px) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(255,255,255,.65);
+      z-index: 2;
+    }
+  }
+  .box {
+    display: block;
+    position: absolute;
+    z-index: 9999;
+    background-color: #fff;
+    opacity: 0;
+    margin-top: 0;
+    transition: all .3s;
+    @media (max-width:500px) {
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin-top: 0;
+      width: 100%;
+    }
+    @media (min-width:500px) {
+      left: 50%;
+      top: 0;
+      width: 300px;
+      margin-top: 16vh;
+      margin-left: -150px;
+       border-radius: 5px;
+      border: 1px solid @dark + #333333;
+      box-shadow: 0 0 15px 0 rgba(0,0,0,.3);
+    }
+    h3,h4 {
+      text-align: center;
+      color: @dark;
+    }
+    h3 {font-size: 18px;font-weight: bold;padding-top: 10px;}
+    h4 {font-size: 14px;padding-bottom: 10px;}
+    .close {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding-right: 8px;
+      padding-top: 8px;
+    }
+    .input-box {
+      position: relative;
+      border-top: 1px solid #eee;
+      input {
+        padding: 15px 8px;
+        height: 48px;
+        width: 100%;
+        font-size: 14px;
+        line-height: 18px;
+        color: #787878;
+        border: 0;
+        outline: 0;
+        box-sizing: border-box;
+      }
+      .living-m {
+        width: 100%;
+        border: 0;
+        outline: 0;
+      }
+      label {
+        display: inline-block;
+        position: absolute;
+        right: 15px;
+        line-height: 48px;
+        font-size: 14px;
+        font-weight: normal;
+        color: red;
+        transition: all .3s;
+      }
+    }
+    .bt-box {
+      border-top: 1px solid #eee;
+      padding: 14px;
+      button {
+        width: 100%;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        .button;
+      }
+    }
+    .box-bottom {
+      padding: 6px 20px 20px 20px;
+      a {
+        .link-sign;
+      }
+      #forget-p {
+        float: left;
+      }
+      #to-sign-up {
+        float: right;
+      }
+      #to-sign-in {
+        float: right;
+      }
+    }
+  }
+}
