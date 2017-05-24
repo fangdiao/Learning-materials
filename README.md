@@ -1,11 +1,11 @@
-## 校园威客平台前端开发规范：(by fangdiao)
+## 学习资料网站开发规范：(by fangdiao)
 
 **代码提交说明**：目录pull到本地以后不要删除文件，因为删除操作也是一种提交，会修改目录结构。
 
 ### 一、基本架构
 
 1. 使用语言：HTML、CSS、JavaScript
-2. 使用框架：Boostrap、jQuery
+2. 使用框架：node、express、webpack、Boostrap、jQuery、
 
 ### 二、代码风格
 
